@@ -1,4 +1,4 @@
-package com.bfp.oms.Service;
+package com.cituccs.bfp.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -6,8 +6,9 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bfp.oms.Entity.BuildingListEntity;
-import com.bfp.oms.Repository.BuildingListRepository;
+import com.cituccs.bfp.Entity.BuildingListEntity;
+import com.cituccs.bfp.Repository.BuildingListRepository;
+
 
 @Service
 public class BuildingListService {
@@ -24,9 +25,9 @@ public class BuildingListService {
 	        return brepo.save(permit);
 	    }
 	    //R - Read or search BuildingPermit by Building Permit No
-	    public BuildingListEntity findByBuildingPermitNo(String buildingPermitNo) {
-	        if (brepo.findByBuildingpermitno(buildingPermitNo)!= null ) {
-	        	  return brepo.findByBuildingpermitno(buildingPermitNo);
+	    public BuildingListEntity findByBuildingPermitNo(String buildingpermitno) {
+	        if (brepo.findByBuildingpermitno(buildingpermitno)!= null ) {
+	        	  return brepo.findByBuildingpermitno(buildingpermitno);
 	        }
 	        else
 	            return null;
@@ -54,18 +55,40 @@ public class BuildingListService {
 	    		return brepo.save(bfp);
 	    		
 	    	}catch(NoSuchElementException nex){
-	    		throw new Exception("Control Number "+id+" does not exist!");
+	    		throw new Exception("ID number "+id+" does not exist!");
 	    	}
 	    	
 	    }
+	    
+	  //U - Add Evaluation to Permit
+	    public BuildingListEntity addEvaluation(int id, BuildingListEntity newFormDetails) throws Exception{
+	    	BuildingListEntity bfp = new BuildingListEntity();
+	    	try {
+	    		bfp.setStatus(newFormDetails.getStatus());
+	    		bfp.setEvaluator(newFormDetails.getEvaluator());
+	    		bfp.setNostorey(newFormDetails.getNostorey());
+	    		bfp.setConstructrenovate(newFormDetails.getConstructrenovate());
+	    		bfp.setStructureConstructed(newFormDetails.isStructureconstructed());
+	    		bfp.setRemarks(newFormDetails.getRemarks());
+	    		bfp.setDefects(newFormDetails.getDefects());
+	    		return brepo.save(bfp);
+	    		
+	    	}catch(NoSuchElementException nex){
+	    		throw new Exception("ID number "+id+" does not exist!");
+	    	}
+	    	
+	    }
+	    
+	    
+	    
 	    //D - Delete a course permit
 	    public String deletePermit(int controlno) {
 	        String msg;
 	        if(brepo.findById(controlno) != null) {
 	        	brepo.deleteById(controlno); //find the id number of the student to be deleted
-	            msg = "Control Number: " + controlno + " was successfully deleted!";
+	            msg = "Item ID Number: " + controlno + " was successfully deleted!";
 	        } else {
-	            msg = "Control Number: " + controlno + " was NOT found!";
+	            msg = "Item ID Number: " + controlno + " was NOT found!";
 	        }
 	        
 	        return msg;

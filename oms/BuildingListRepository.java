@@ -1,11 +1,10 @@
-package com.bfp.oms.Repository;
+package com.cituccs.bfp.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import com.bfp.oms.Entity.BuildingListEntity;
+import com.cituccs.bfp.Entity.BuildingListEntity;
 
-@Repository
-public interface BuildingListRepository extends JpaRepository<BuildingListEntity, Integer>{
-	BuildingListEntity findByBuildingpermitno(String buildingpermitno);
+public interface BuildingListRepository extends JpaRepository<BuildingListEntity,Integer> {
+	BuildingListEntity findByBuildingpermitno(String Buildingpermitno);
+	
 }
