@@ -33,8 +33,9 @@ public class NewbpClosureOrderController {
 	public List<NewbpClosureOrderEntity> getAllNewbpClosureOrder(){
 		return newcoserv.getAllNewbpClosureOrder();
 	}
-	public NewbpClosureOrderEntity putNewbpClosureOrder(int newco_id, NewbpClosureOrderEntity newNewbpClosureOrderDetails) throws Exception{
-		return newcoserv.putNewbpClosureOrder(newco_id, newNewbpClosureOrderDetails);
+	@PutMapping("/updateRemarks")
+	public NewbpClosureOrderEntity putNewbpClosureOrder(@RequestParam int id,@RequestBody NewbpClosureOrderEntity newNewbpClosureOrderDetails) throws Exception{
+		return newcoserv.putNewbpClosureOrder(id, newNewbpClosureOrderDetails);
 	}
 	
 	@PutMapping("/updateNewbpClosure")
