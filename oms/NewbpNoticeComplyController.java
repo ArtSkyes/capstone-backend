@@ -34,9 +34,9 @@ public class NewbpNoticeComplyController {
 	}
 	
 	//update records
-	@PutMapping("/putNewbpNotucetoComply")
-	public NewbpNoticeComplyEntity putNewbpNoticeComply(int newnoticecomply_id, NewbpNoticeComplyEntity newNewbpNoticeComplyDetails) throws Exception {
-		return newncserv.putNewbpNoticeComply(newnoticecomply_id, newNewbpNoticeComplyDetails);
+	@PutMapping("/putNewComply")
+	public NewbpNoticeComplyEntity putNewbpNoticeComply(@RequestParam int id,@RequestBody NewbpNoticeComplyEntity newNewbpNoticeComplyDetails) throws Exception {
+		return newncserv.putNewbpNoticeComply(id, newNewbpNoticeComplyDetails);
 	}
 	
 	@PutMapping("/updateNewbpNotucetoComply")
