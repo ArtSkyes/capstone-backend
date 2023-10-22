@@ -34,7 +34,7 @@ public class NewbpNoticeCorrectviolationController {
 	
 	//update records
 	@PutMapping("/putNewbpCorrectViolation")
-	public NewbpNoticeCorrectViolationEntity putNewbpNoticeCorrectViolation(int newncv_id, NewbpNoticeCorrectViolationEntity newNewbpNoticeCorrectViolationDetails) throws Exception{
+	public NewbpNoticeCorrectViolationEntity putNewbpNoticeCorrectViolation(@RequestParam int newncv_id,@RequestBody NewbpNoticeCorrectViolationEntity newNewbpNoticeCorrectViolationDetails) throws Exception{
 		return newncvserv.putNewbpNoticeCorrectViolation(newncv_id, newNewbpNoticeCorrectViolationDetails);
 	}
 	
