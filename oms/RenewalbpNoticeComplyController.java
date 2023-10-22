@@ -30,8 +30,8 @@ public class RenewalbpNoticeComplyController {
 	public List<RenewalbpNoticeComplyEntity> getAllRenewalbpNoticeComply(){
 		return renewncserv.getAllRenewalbpNoticeComply();
 	}
-	
-	public RenewalbpNoticeComplyEntity putRenewalbpNoticeComply(int renewnc_id, RenewalbpNoticeComplyEntity newRenewalbpNoticeComplyDetails) throws Exception{
+	@PutMapping("/updateRemarksRenewal")
+	public RenewalbpNoticeComplyEntity putRenewalbpNoticeComply(@RequestParam int renewnc_id,@RequestBody RenewalbpNoticeComplyEntity newRenewalbpNoticeComplyDetails) throws Exception{
 		return renewncserv.putRenewalbpNoticeComply(renewnc_id, newRenewalbpNoticeComplyDetails);
 	}
 	
