@@ -33,7 +33,8 @@ public class RenewalbpNoticeCorrectViolationController {
 		return renewcvserv.getAllRenewalbpNoticeCorrectViolation();
 	}
 	
-	public RenewalbpNoticeCorrectViolationEntity putRenewalbpNoticeCorrectViolation(int renewao_id, RenewalbpNoticeCorrectViolationEntity newRenewalbpNoticeCorrectViolationDetials) throws Exception{
+	@PutMapping("/updateRemarksNTCV")
+	public RenewalbpNoticeCorrectViolationEntity putRenewalbpNoticeCorrectViolation(@RequestParam int renewao_id,@RequestBody RenewalbpNoticeCorrectViolationEntity newRenewalbpNoticeCorrectViolationDetials) throws Exception{
 		return renewcvserv.putRenewalbpNoticeCorrectViolation(renewao_id, newRenewalbpNoticeCorrectViolationDetials);
 	}
 	
@@ -57,3 +58,4 @@ public class RenewalbpNoticeCorrectViolationController {
         return renewcvserv.deleteItem(id);
     }
 }
+
