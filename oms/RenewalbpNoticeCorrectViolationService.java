@@ -31,14 +31,19 @@ public class RenewalbpNoticeCorrectViolationService {
 			newRenewalbpNoticeCorrectViolation = renewcvrepo.findById(renewao_id).get();
 			
 			//update
-			newRenewalbpNoticeCorrectViolation.setStatus(newRenewalbpNoticeCorrectViolation.getStatus());
+			newRenewalbpNoticeCorrectViolation.setRemarks(newRenewalbpNoticeCorrectViolationDetials.getRemarks());
 			
+			System.out.println(newRenewalbpNoticeCorrectViolation.getRemarks());
 			//save
 			return renewcvrepo.save(newRenewalbpNoticeCorrectViolation);
 		}catch(NoResultException nex) {
 			throw new Exception("ID Number" +renewao_id+ "Does not Exsit!");
 		}
 	}
+	
+
+	
+	
 	public RenewalbpNoticeCorrectViolationEntity updateRenewalbpNoticeCorrectViolation(int id, RenewalbpNoticeCorrectViolationEntity newRenewalbpNoticeCorrectViolationDetials) throws Exception{
 		
 		RenewalbpNoticeCorrectViolationEntity newRenewalbpNoticeCorrectViolation = new RenewalbpNoticeCorrectViolationEntity();
@@ -71,7 +76,7 @@ public class RenewalbpNoticeCorrectViolationService {
 			newRenewalbpNoticeCorrectViolation.setDefects(newRenewalbpNoticeCorrectViolationDetials.getDefects());
 			newRenewalbpNoticeCorrectViolation.setReceived_name(newRenewalbpNoticeCorrectViolationDetials.getReceived_name());
 			newRenewalbpNoticeCorrectViolation.setReceivedntcv_date(newRenewalbpNoticeCorrectViolationDetials.getReceivedntcv_date());
-			newRenewalbpNoticeCorrectViolation.setStatus(newRenewalbpNoticeCorrectViolationDetials.getStatus());
+			
 			
 			//save
 			return renewcvrepo.save(newRenewalbpNoticeCorrectViolation);
