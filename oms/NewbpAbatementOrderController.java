@@ -32,8 +32,8 @@ public class NewbpAbatementOrderController {
 	}
 	
 	@PutMapping("/putNewbpAbatementOrder")
-	public NewbpAbatementOrderEntity putNewbpAbatementOrder(int newao_id, NewbpAbatementOrderEntity newNewbpAbatementOrderDetails) throws Exception {
-		return newaoserv.putNewbpAbatementOrder(newao_id, newNewbpAbatementOrderDetails);
+	public NewbpAbatementOrderEntity putNewbpAbatementOrder(@RequestParam int id,@RequestBody NewbpAbatementOrderEntity newNewbpAbatementOrderDetails) throws Exception {
+		return newaoserv.putNewbpAbatementOrder(id, newNewbpAbatementOrderDetails);
 	}
 	@PutMapping("/updateNewbpAbatementOrder")
 	public NewbpAbatementOrderEntity updateNewbpAbatementOrder(@RequestParam int id,@RequestBody NewbpAbatementOrderEntity newNewbpAbatementOrderDetails) throws Exception {
