@@ -31,14 +31,14 @@ public class RenewalbpAbatementOrderController {
 	public List<RenewalbpAbatementOrderEntity> getAllRenewalbpAbatementOrder(){
 		return renewaoserv.getAllRenewalbpAbatementOrder();
 	}
-	
-	public RenewalbpAbatementOrderEntity putRenewalbpAbatementOrder(int renewao_id, RenewalbpAbatementOrderEntity newRenewalbpAbatementOrderDetails) throws Exception{
-		return renewaoserv.putRenewalbpAbatementOrder(renewao_id, newRenewalbpAbatementOrderDetails);
+	@PutMapping("/updateRemarks")
+	public RenewalbpAbatementOrderEntity putRenewalbpAbatementOrder(@RequestParam int id,@RequestBody RenewalbpAbatementOrderEntity newRenewalbpAbatementOrderDetails) throws Exception{
+		return renewaoserv.putRenewalbpAbatementOrder(id, newRenewalbpAbatementOrderDetails);
 	}
 		
 	@PutMapping("/updateRenewalbpAbatement")
 	public RenewalbpAbatementOrderEntity updateRenewalbpAbatementOrder(@RequestParam int id,@RequestBody RenewalbpAbatementOrderEntity newRenewalbpAbatementOrderDetails) throws Exception{
-		return renewaoserv.putRenewalbpAbatementOrder(id, newRenewalbpAbatementOrderDetails);
+		return renewaoserv.updateRenewalbpAbatementOrder(id, newRenewalbpAbatementOrderDetails);
 	}
 	
 	@PostMapping("/insertRenewalAbatementPermit")
