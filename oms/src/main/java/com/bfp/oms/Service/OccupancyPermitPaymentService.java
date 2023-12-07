@@ -33,13 +33,18 @@ public class OccupancyPermitPaymentService {
 			newOccuPayment = brepo.findById(id).get();
 			
 			//update
-			newOccuPayment.setPayor(newNewbpApprovedApplicationDetails.getPayor());
+			newOccuPayment.setProjectname(newNewbpApprovedApplicationDetails.getProjectname());
+			newOccuPayment.setLocation(newNewbpApprovedApplicationDetails.getLocation());
+			newOccuPayment.setName(newNewbpApprovedApplicationDetails.getName());
+			newOccuPayment.setFsc(newNewbpApprovedApplicationDetails.getFsc());
 			newOccuPayment.setBusiness_permitno(newNewbpApprovedApplicationDetails.getBusiness_permitno());
 			newOccuPayment.setOr_no(newNewbpApprovedApplicationDetails.getOr_no());
 			newOccuPayment.setOps_no(newNewbpApprovedApplicationDetails.getOps_no());
-			newOccuPayment.setPayment(newNewbpApprovedApplicationDetails.getPayment());
-			newOccuPayment.setAgency(newNewbpApprovedApplicationDetails.getAgency());
+			newOccuPayment.setOps_date(newNewbpApprovedApplicationDetails.getOps_date());
 			newOccuPayment.setPayment_date(newNewbpApprovedApplicationDetails.getPayment_date());
+			newOccuPayment.setAmount_paid(newNewbpApprovedApplicationDetails.getAmount_paid());
+			newOccuPayment.setTotal_amount(newNewbpApprovedApplicationDetails.getTotal_amount());
+			newOccuPayment.setAssessor_name(newNewbpApprovedApplicationDetails.getAssessor_name());
 			newOccuPayment.setPayment(newNewbpApprovedApplicationDetails.getPayment());
 			
 			
