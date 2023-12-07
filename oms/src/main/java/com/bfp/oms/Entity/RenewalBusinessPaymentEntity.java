@@ -13,28 +13,41 @@ public class RenewalBusinessPaymentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String payor;
+	private String projectname;
+	private String location;
+	private String name;
+	private String fsc;
 	private String business_permitno;
 	private String or_no;
 	private String ops_no;
+	private Date ops_date;
 	private Date payment_date;
-	private String agency;
+	private double amount_paid;
+	private double total_amount;
+	private String assessor_name;
 	private ArrayList<String[]> payment;
 	
 	
-	public RenewalBusinessPaymentEntity() {}
+	public NewBusinessPaymentEntity() {}
 
 
-	public RenewalBusinessPaymentEntity(int id, String payor, String business_permitno, String or_no, String ops_no,
-			Date payment_date, String agency, ArrayList<String[]> payment) {
+	public NewBusinessPaymentEntity(int id, String projectname, String location, String name, String fsc,
+			String business_permitno, String or_no, String ops_no, Date ops_date, Date payment_date, double amount_paid,
+			double total_amount, String assessor_name, ArrayList<String[]> payment) {
 		super();
 		this.id = id;
-		this.payor = payor;
+		this.projectname = projectname;
+		this.location = location;
+		this.name = name;
+		this.fsc = fsc;
 		this.business_permitno = business_permitno;
 		this.or_no = or_no;
 		this.ops_no = ops_no;
+		this.ops_date = ops_date;
 		this.payment_date = payment_date;
-		this.agency = agency;
+		this.amount_paid = amount_paid;
+		this.total_amount = total_amount;
+		this.assessor_name = assessor_name;
 		this.payment = payment;
 	}
 
@@ -49,13 +62,43 @@ public class RenewalBusinessPaymentEntity {
 	}
 
 
-	public String getPayor() {
-		return payor;
+	public String getProjectname() {
+		return projectname;
 	}
 
 
-	public void setPayor(String payor) {
-		this.payor = payor;
+	public void setProjectname(String projectname) {
+		this.projectname = projectname;
+	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getFsc() {
+		return fsc;
+	}
+
+
+	public void setFsc(String fsc) {
+		this.fsc = fsc;
 	}
 
 
@@ -89,6 +132,16 @@ public class RenewalBusinessPaymentEntity {
 	}
 
 
+	public Date getOps_date() {
+		return ops_date;
+	}
+
+
+	public void setOps_date(Date ops_date) {
+		this.ops_date = ops_date;
+	}
+
+
 	public Date getPayment_date() {
 		return payment_date;
 	}
@@ -99,13 +152,33 @@ public class RenewalBusinessPaymentEntity {
 	}
 
 
-	public String getAgency() {
-		return agency;
+	public double getAmount_paid() {
+		return amount_paid;
 	}
 
 
-	public void setAgency(String agency) {
-		this.agency = agency;
+	public void setAmount_paid(double amount_paid) {
+		this.amount_paid = amount_paid;
+	}
+
+
+	public double getTotal_amount() {
+		return total_amount;
+	}
+
+
+	public void setTotal_amount(double total_amount) {
+		this.total_amount = total_amount;
+	}
+
+
+	public String getAssessor_name() {
+		return assessor_name;
+	}
+
+
+	public void setAssessor_name(String assessor_name) {
+		this.assessor_name = assessor_name;
 	}
 
 
@@ -117,5 +190,4 @@ public class RenewalBusinessPaymentEntity {
 	public void setPayment(ArrayList<String[]> payment) {
 		this.payment = payment;
 	}
-
 }
