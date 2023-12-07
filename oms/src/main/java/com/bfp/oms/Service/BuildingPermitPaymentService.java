@@ -33,13 +33,18 @@ public class BuildingPermitPaymentService {
 			newBuildingPayment = brepo.findById(id).get();
 			
 			//update
-			newBuildingPayment.setPayor(newNewbpApprovedApplicationDetails.getPayor());
+			newBuildingPayment.setProjectname(newNewbpApprovedApplicationDetails.getProjectname());
+			newBuildingPayment.setLocation(newNewbpApprovedApplicationDetails.getLocation());
+			newBuildingPayment.setName(newNewbpApprovedApplicationDetails.getName());
+			newBuildingPayment.setFsc(newNewbpApprovedApplicationDetails.getFsc());
 			newBuildingPayment.setBusiness_permitno(newNewbpApprovedApplicationDetails.getBusiness_permitno());
 			newBuildingPayment.setOr_no(newNewbpApprovedApplicationDetails.getOr_no());
 			newBuildingPayment.setOps_no(newNewbpApprovedApplicationDetails.getOps_no());
-			newBuildingPayment.setPayment(newNewbpApprovedApplicationDetails.getPayment());
-			newBuildingPayment.setAgency(newNewbpApprovedApplicationDetails.getAgency());
+			newBuildingPayment.setOps_date(newNewbpApprovedApplicationDetails.getOps_date());
 			newBuildingPayment.setPayment_date(newNewbpApprovedApplicationDetails.getPayment_date());
+			newBuildingPayment.setAmount_paid(newNewbpApprovedApplicationDetails.getAmount_paid());
+			newBuildingPayment.setTotal_amount(newNewbpApprovedApplicationDetails.getTotal_amount());
+			newBuildingPayment.setAssessor_name(newNewbpApprovedApplicationDetails.getAssessor_name());
 			newBuildingPayment.setPayment(newNewbpApprovedApplicationDetails.getPayment());
 			
 			
