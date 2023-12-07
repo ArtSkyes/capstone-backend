@@ -32,15 +32,19 @@ public class RenewalBusinessPermitPaymentService {
 			newNewBusissPayment = brepo.findById(id).get();
 			
 			//update
-			newNewBusissPayment.setPayor(newNewbpApprovedApplicationDetails.getPayor());
+			newNewBusissPayment.setProjectname(newNewbpApprovedApplicationDetails.getProjectname());
+			newNewBusissPayment.setLocation(newNewbpApprovedApplicationDetails.getLocation());
+			newNewBusissPayment.setName(newNewbpApprovedApplicationDetails.getName());
+			newNewBusissPayment.setFsc(newNewbpApprovedApplicationDetails.getFsc());
 			newNewBusissPayment.setBusiness_permitno(newNewbpApprovedApplicationDetails.getBusiness_permitno());
 			newNewBusissPayment.setOr_no(newNewbpApprovedApplicationDetails.getOr_no());
 			newNewBusissPayment.setOps_no(newNewbpApprovedApplicationDetails.getOps_no());
-			newNewBusissPayment.setPayment(newNewbpApprovedApplicationDetails.getPayment());
-			newNewBusissPayment.setAgency(newNewbpApprovedApplicationDetails.getAgency());
+			newNewBusissPayment.setOps_date(newNewbpApprovedApplicationDetails.getOps_date());
 			newNewBusissPayment.setPayment_date(newNewbpApprovedApplicationDetails.getPayment_date());
+			newNewBusissPayment.setAmount_paid(newNewbpApprovedApplicationDetails.getAmount_paid());
+			newNewBusissPayment.setTotal_amount(newNewbpApprovedApplicationDetails.getTotal_amount());
+			newNewBusissPayment.setAssessor_name(newNewbpApprovedApplicationDetails.getAssessor_name());
 			newNewBusissPayment.setPayment(newNewbpApprovedApplicationDetails.getPayment());
-			
 			
 			//save
 			return brepo.save(newNewBusissPayment);
